@@ -12,18 +12,18 @@ export function AuthProvider({ children }) {
   useEffect(() => {
     // Only run on client side
     if (typeof window === 'undefined') return;
-
+    
     // Check if user is logged in on initial load
     const token = Cookies.get('token');
     const userData = Cookies.get('user');
-
+    
     if (token && userData) {
       try {
         const parsedUser = JSON.parse(userData);
         setUser({ ...parsedUser, token });
-
+        
         // Set authorization header for all future requests
-        axios.defaults.headers.common['Authorization'] = Bearer ${token};
+        axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
       } catch (error) {
         console.error('Failed to parse user data from cookie', error);
         Cookies.remove('token');
