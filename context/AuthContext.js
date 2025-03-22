@@ -50,7 +50,7 @@ export function AuthProvider({ children }) {
     setUser({ ...userData, token });
 
     // Set authorization header for all future requests
-    axios.defaults.headers.common['Authorization'] = Bearer ${token};
+    axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 
     return response.data;
   };
