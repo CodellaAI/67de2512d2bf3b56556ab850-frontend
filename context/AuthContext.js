@@ -35,7 +35,7 @@ export function AuthProvider({ children }) {
   }, []);
 
   const login = async (email, password) => {
-    const response = await axios.post(${process.env.NEXT_PUBLIC_API_URL}/api/auth/login, {
+    const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/api/auth/login`, {
       email,
       password,
     });
@@ -56,7 +56,7 @@ export function AuthProvider({ children }) {
   };
 
   const signup = async (username, email, password) => {
-    const response = await axios.post(${process.env.NEXT_PUBLIC_API_URL}/api/auth/register, {
+    const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/api/auth/register`, {
       username,
       email,
       password,
