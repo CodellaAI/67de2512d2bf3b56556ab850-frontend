@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['localhost'],
+    domains: ['localhost', process.env.NEXT_PUBLIC_API_URL],
   },
   // Add this to prevent static optimization issues
   experimental: {
